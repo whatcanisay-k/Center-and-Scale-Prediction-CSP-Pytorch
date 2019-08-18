@@ -14,7 +14,7 @@ git clone https://github.com/zhangminwen/Center-and-Scale-Prediction-CSP-Pytorch
 
 ## Testing
 1. Download our pre-trained model and save in $CSP_ROOT/weights.
-[model:epoch320](https://pan.baidu.com/s/19XNZDa5hJV3sFxtR_XOhlg) password:s06j
+[model:epoch320](https://pan.baidu.com/s/1uZx5QVJz5w40O_GmrO3JVA) password:s06j
 2. Test the model by using gpu.
 ```Shell
 cd $CSP_ROOT
