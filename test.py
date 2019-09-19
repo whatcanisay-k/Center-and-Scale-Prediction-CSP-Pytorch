@@ -39,11 +39,11 @@ def parse_det_offset(output, config):
     size, score, down, nms_thresh = config.test_size, config.score_thres, config.stride, config.nms_thres
     pos, scale, offset = output
     pos = np.squeeze(pos.data.cpu())
-    height = scale.data.cpu()[0, 0, :, :]
-    width = scale.data.cpu()[0, 1, :, :]
+    height = scale.data.cpu()[0, 0, :, :].numpy()
+    width = scale.data.cpu()[0, 1, :, :].numpy()
 
-    offset_y = offset.data.cpu()[0, 0, :, :]
-    offset_x = offset.data.cpu()[0, 1, :, :]
+    offset_y = offset.data.cpu()[0, 0, :, :].numpy()
+    offset_x = offset.data.cpu()[0, 1, :, :].numpy()
     y_c, x_c = np.where(pos > score)
     boxs = []
     if len(y_c) > 0:

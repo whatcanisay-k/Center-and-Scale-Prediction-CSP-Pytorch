@@ -39,7 +39,11 @@ class Csp(nn.Module):
     def __init__(self, phase):
         super(Csp, self).__init__()
         self.phase = phase
-        resnet = resnet50(pretrained=True, receptive_keep=True)
+
+        if self.phase == 'test':
+            resnet = resnet50(pretrained=False, receptive_keep=True)
+        else:
+            resnet = resnet50(pretrained=True, receptive_keep=True)
 
         self.conv1 = resnet.conv1
         self.bn1 = resnet.bn1
